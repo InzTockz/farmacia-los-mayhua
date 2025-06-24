@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "tbl_venta")
@@ -20,5 +23,14 @@ public class VentaEntity {
     @Column(name = "importe_total", nullable = false)
     private double importeTotal;
 
-    @Column(name = "")
+    @Column(name = "fecha_creacion", nullable = false)
+    @CreationTimestamp
+    private LocalDate fechaCreacion;
+
+    @Column(name = "estado", nullable = false)
+    private boolean estado;
+
+    @JoinColumn(name = "id_usuario", nullable = false)
+    @ManyToOne
+    private UsuarioEntity idUsuario;
 }
