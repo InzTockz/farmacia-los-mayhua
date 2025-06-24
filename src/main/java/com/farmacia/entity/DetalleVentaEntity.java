@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DetalleVenta {
+public class DetalleVentaEntity {
 
     @Id
     @Column(name = "id_detalle_venta")
@@ -21,7 +21,7 @@ public class DetalleVenta {
     @ManyToOne
     private VentaEntity idVenta;
 
-    @JoinColumn(name = "id_detalle_venta", nullable = false)
+    @JoinColumn(name = "id_producto", nullable = false)
     @ManyToOne
     private ProductoEntity idProducto;
 }
