@@ -18,7 +18,7 @@ public class ClasificacionProductoEntity {
     private Long idClasificacion;
 
     @Column(name = "nombre_clasificacion", nullable = false, length = 100)
-    private String nombre_clasificacion;
+    private String nombreClasificacion;
 
     @Column(name = "estado", nullable = false)
     private boolean estado;

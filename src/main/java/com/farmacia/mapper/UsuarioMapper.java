@@ -9,6 +9,6 @@ import org.mapstruct.MappingConstants;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface UsuarioMapper {
 
-    @Mapping(source = "", target = "")
-    UsuarioRequest UsuarioDtoToUsuarioEntity(UsuarioEntity usuarioEntity);
+    //@Mapping(source = "", target = "")
+    //UsuarioRequest UsuarioDtoToUsuarioEntity(UsuarioEntity usuarioEntity);
 }

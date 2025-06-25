@@ -1,4 +1,8 @@
 package com.farmacia.dto;
 
-public record CategoriaProductoResponse() {
+public record CategoriaProductoResponse(
+        Long idCategoria,
+        String nombreCategoria,
+        boolean estado
+) {
 }
