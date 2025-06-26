@@ -24,7 +24,6 @@ public class ProductoEntity {
     private String nombreProducto;
 
     @Column(name = "fecha_fabricacion", nullable = false)
-    @CreationTimestamp
     private LocalDate fechaFabricacion;
 
     @Column(name = "fecha_vencimiento", nullable = false)
