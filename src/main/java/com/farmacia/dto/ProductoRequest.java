@@ -1,16 +1,23 @@
 package com.farmacia.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
-public record ProductoRequest(
-        String nombreProducto,
-        LocalDate fechaFabricacion,
-        LocalDate fechaVencimiento,
-        int stock,
-        double precio,
-        String presentacionImg,
-        boolean estado,
-        Long idCategoria,
-        Long idClasificacionProducto
-) {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProductoRequest {
+
+    private String nombreProducto;
+    private LocalDate fechaFabricacion;
+    private LocalDate fechaVencimiento;
+    private int stock;
+    private double precio;
+    private String presentacionImg;
+    private boolean estado;
+    private Long idCategoria;
+    private Long idClasificacionProducto;
 }

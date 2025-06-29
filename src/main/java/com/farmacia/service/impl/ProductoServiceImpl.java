@@ -6,8 +6,11 @@ import com.farmacia.entity.ProductoEntity;
 import com.farmacia.mapper.ProductoMapper;
 import com.farmacia.repository.ProductoRepository;
 import com.farmacia.service.ProductoService;
+import com.farmacia.utils.UploadImage;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -15,6 +18,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     private final ProductoMapper productoMapper;
     private final ProductoRepository productoRepository;
+    private UploadImage uploadImage;
 
     public ProductoServiceImpl(ProductoMapper productoMapper, ProductoRepository productoRepository) {
         this.productoMapper = productoMapper;
@@ -27,8 +31,13 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public ProductoResponse registrarProducto(ProductoRequest productoRequest) {
-        return this.productoMapper.ToProductDto(this.productoRepository.save(this.productoMapper.ToProductoEntity(productoRequest)));
+    public ProductoResponse registrarProducto(ProductoRequest productoRequest, MultipartFile multipartFile) throws IOException {
+        if(productoRequest!=null){
+            productoRequest.setPresentacionImg(this.uploadImage.upload(multipartFile));
+            return this.productoMapper.ToProductDto(this.productoRepository.save(this.productoMapper.ToProductoEntity(productoRequest)));
+        } else {
+            return null;
+        }
     }
 
     @Override
