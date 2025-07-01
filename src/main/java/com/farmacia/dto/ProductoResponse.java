@@ -8,6 +8,7 @@ public record ProductoResponse (
         LocalDate fechaFabricacion,
         LocalDate fechaVencimiento,
         int stock,
+        double precio,
         String presentacionImg,
         boolean estado,
         Long idCategoria,

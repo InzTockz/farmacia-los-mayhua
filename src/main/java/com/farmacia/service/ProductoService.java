@@ -11,7 +11,7 @@ public interface ProductoService {
 
     List<ProductoResponse> listadoProductos();
     ProductoResponse registrarProducto(ProductoRequest productoRequest, MultipartFile multipartFile) throws IOException;
-    ProductoResponse actualizarProducto(Long idProducto, ProductoRequest productoRequest);
+    ProductoResponse actualizarProducto(Long idProducto, ProductoRequest productoRequest, MultipartFile multipartFile) throws  IOException;
     ProductoResponse buscarProducto(Long idProducto);
     void deshabilitarProducto(Long idProducto);
 }

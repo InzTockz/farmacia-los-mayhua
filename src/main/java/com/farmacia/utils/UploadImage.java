@@ -1,5 +1,6 @@
 package com.farmacia.utils;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -8,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+@Component
 public class UploadImage {
 
     private final String FOLDER = "src//main//resources//static//images//";
