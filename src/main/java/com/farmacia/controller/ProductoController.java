@@ -40,12 +40,11 @@ public class ProductoController {
             @RequestParam("fechaVencimiento") LocalDate fechaVencimiento,
             @RequestParam("stock") int stock,
             @RequestParam("precio") double precio,
-            @RequestParam("estado") boolean estado,
             @RequestParam("idCategoria") Long idCategoria,
             @RequestParam("idClasificacionProducto") Long idClasificacionProducto,
             @RequestParam(value = "imagen", required = false) MultipartFile imagen) throws IOException {
 
-        ProductoRequest producto = new ProductoRequest(nombreProducto, fechaFabricacion, fechaVencimiento, stock, precio, estado, idCategoria, idClasificacionProducto);
+        ProductoRequest producto = new ProductoRequest(nombreProducto, fechaFabricacion, fechaVencimiento, stock, precio, idCategoria, idClasificacionProducto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(this.productoService.registrarProducto(producto, imagen));
     }
@@ -62,7 +61,7 @@ public class ProductoController {
                                                                @RequestParam("idClasificacionProducto") Long idClasificacionProducto,
                                                                @RequestParam(value = "imagen", required = false) MultipartFile imagen) throws IOException {
 
-        ProductoRequest producto = new ProductoRequest(nombreProducto, fechaFabricacion, fechaVencimiento, stock, precio, estado, idCategoria, idClasificacionProducto);
+        ProductoRequest producto = new ProductoRequest(nombreProducto, fechaFabricacion, fechaVencimiento, stock, precio, idCategoria, idClasificacionProducto);
 
         return ResponseEntity.status(HttpStatus.OK).body(this.productoService.actualizarProducto(idProducto, producto, imagen));
     }

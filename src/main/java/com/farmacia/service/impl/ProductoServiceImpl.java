@@ -38,6 +38,7 @@ public class ProductoServiceImpl implements ProductoService {
         if(productoRequest!=null){
             ProductoEntity productoEntity = this.productoMapper.ToProductoEntity(productoRequest);
             productoEntity.setPresentacionImg(this.uploadImage.upload(multipartFile));
+            productoEntity.setEstado(true);
             //productoRequest.setPresentacionImg(this.uploadImage.upload(multipartFile));
             return this.productoMapper.ToProductResponseDto(
                     this.productoRepository.save(productoEntity));
@@ -59,7 +60,7 @@ public class ProductoServiceImpl implements ProductoService {
                 productoEntity.setFechaVencimiento(productoRequest.getFechaVencimiento());
                 productoEntity.setStock(productoRequest.getStock());
                 productoEntity.setPrecio(productoRequest.getPrecio());
-                productoEntity.setEstado(productoRequest.isEstado());
+                productoEntity.setEstado(productoEntity.isEstado());
                 CategoriaProductoEntity categoriaProductoEntity = new CategoriaProductoEntity();
                 categoriaProductoEntity.setIdCategoria(productoRequest.getIdCategoria());
                 productoEntity.setIdCategoria(categoriaProductoEntity);
@@ -77,7 +78,7 @@ public class ProductoServiceImpl implements ProductoService {
                 productoEntity.setFechaVencimiento(productoRequest.getFechaVencimiento());
                 productoEntity.setStock(productoRequest.getStock());
                 productoEntity.setPrecio(productoRequest.getPrecio());
-                productoEntity.setEstado(productoRequest.isEstado());
+                productoEntity.setEstado(productoEntity.isEstado());
                 CategoriaProductoEntity categoriaProductoEntity = new CategoriaProductoEntity();
                 categoriaProductoEntity.setIdCategoria(productoRequest.getIdCategoria());
                 productoEntity.setIdCategoria(categoriaProductoEntity);

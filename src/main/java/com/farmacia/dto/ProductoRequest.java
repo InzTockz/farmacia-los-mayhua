@@ -16,7 +16,6 @@ public class ProductoRequest {
     private LocalDate fechaVencimiento;
     private int stock;
     private double precio;
-    private boolean estado;
     private Long idCategoria;
     private Long idClasificacionProducto;
 }
