@@ -12,6 +12,7 @@ public record ProductoResponse (
         String presentacionImg,
         boolean estado,
         Long idCategoria,
+        String nombreCategoria,
         Long idClasificacionProducto
 ){
 }

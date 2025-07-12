@@ -14,10 +14,12 @@ public interface ProductoMapper {
 
     //@Mapping(source = "idCategoria", target = "idCategoria.idCategoria")
     //@Mapping(source = "idClasificacionProducto", target = "idClasificacionProducto.idClasificacion")
+    //@Mapping(source = )
     List<ProductoResponse> ToProductoDtoListado(List<ProductoEntity> productoEntities);
 
     @Mapping(target = "idCategoria", source = "idCategoria.idCategoria")
     @Mapping(target = "idClasificacionProducto", source = "idClasificacionProducto.idClasificacion")
+    @Mapping(target = "nombreCategoria", source = "idCategoria.nombreCategoria")
     ProductoResponse ToProductResponseDto(ProductoEntity productoEntity);
 
     @Mapping(target = "idCategoria", source = "idCategoria.idCategoria")
