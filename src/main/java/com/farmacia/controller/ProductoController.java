@@ -56,7 +56,6 @@ public class ProductoController {
                                                                @RequestParam("fechaVencimiento") LocalDate fechaVencimiento,
                                                                @RequestParam("stock") int stock,
                                                                @RequestParam("precio") double precio,
-                                                               @RequestParam("estado") boolean estado,
                                                                @RequestParam("idCategoria") Long idCategoria,
                                                                @RequestParam("idClasificacionProducto") Long idClasificacionProducto,
                                                                @RequestParam(value = "imagen", required = false) MultipartFile imagen) throws IOException {
